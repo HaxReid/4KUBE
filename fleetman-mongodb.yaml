@@ -47,6 +47,7 @@ spec:
     storage: 5Gi
   accessModes:
     - ReadWriteOnce
+  storageClassName: standard
   hostPath:
     path: /mnt/data/mongo
   persistentVolumeReclaimPolicy: Retain
@@ -61,5 +62,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  volumeName: mongo-data-pv
+  storageClassName: standard
       
