@@ -38,19 +38,11 @@ spec:
     app: fleetman-mongodb
   type: ClusterIP
 ---
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: manual
-provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: WaitForFirstConsumer
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mongo-data-pvc
 spec:
-  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
