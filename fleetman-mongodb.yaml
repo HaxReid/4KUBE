@@ -44,13 +44,12 @@ metadata:
   name: mongo-data-pv
 spec:
   capacity:
-    storage: 1Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
     path: /mnt/data/mongo
   persistentVolumeReclaimPolicy: Retain
-  
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
