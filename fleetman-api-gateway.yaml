@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fleetman-api-gateway
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: fleetman-api-gateway

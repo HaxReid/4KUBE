@@ -1,9 +1,10 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-mongodb
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: fleetman-mongodb
@@ -24,7 +25,6 @@ spec:
         - name: mongo-data
           persistentVolumeClaim:
             claimName: mongo-data-pvc
-
 ---
 apiVersion: v1
 kind: Service
@@ -34,7 +34,6 @@ spec:
   ports:
     - port: 27017
       targetPort: 27017
-      nodePort: 30017 
   selector:
     app: fleetman-mongodb
   type: ClusterIP
@@ -45,10 +44,9 @@ metadata:
   name: mongo-data-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: standard
   hostPath:
     path: /mnt/data/mongo
   persistentVolumeReclaimPolicy: Retain
@@ -63,5 +61,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: standard
-      
+  volumeName: mongo-data-pv
+  
