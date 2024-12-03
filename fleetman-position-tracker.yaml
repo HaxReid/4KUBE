@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fleetman-position-tracker
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: fleetman-position-tracker
