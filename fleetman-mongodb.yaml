@@ -39,19 +39,6 @@ spec:
   type: ClusterIP
 ---
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: mongo-data-pv
-spec:
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /mnt/data/mongo
-  persistentVolumeReclaimPolicy: Retain
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mongo-data-pvc
@@ -61,5 +48,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  volumeName: mongo-data-pv
   
