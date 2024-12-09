@@ -26,7 +26,7 @@ kind: Service
 metadata:
   name: fleetman-position-tracker
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: fleetman-position-tracker
   ports:
