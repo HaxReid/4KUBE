@@ -14,13 +14,10 @@ spec:
     spec:
       containers:
       - name: fleetman-queue
-        image: supinfo4kube/queue:1.0.0
+        image: supinfo4kube/queue:1.0.1
         ports:
         - containerPort: 61616
         - containerPort: 8161
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: "production-microservice"
 ---
 apiVersion: v1
 kind: Service
@@ -28,12 +25,12 @@ metadata:
   name: fleetman-queue
 spec:
   ports:
-    - name: activemq
+    - name: messaging
       port: 61616
       targetPort: 61616
-    - name: web-console
+    - name: admin
       port: 8161
       targetPort: 8161
   selector:
     app: fleetman-queue
-  type: ClusterIP
+  type: NodePort

@@ -14,10 +14,12 @@ spec:
     spec:
       containers:
       - name: fleetman-position-simulator
-        image: supinfo4kube/position-simulator:1.0.0
+        image: supinfo4kube/position-simulator:1.0.1
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "production-microservice"
+        ports:
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service

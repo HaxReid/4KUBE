@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: fleetman-api-gateway
-        image: supinfo4kube/api-gateway:1.0.0
+        image: supinfo4kube/api-gateway:1.0.1
         ports:
         - containerPort: 8080
         env:
@@ -25,10 +25,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: fleetman-api-gateway
+  labels:
+    app: fleetman-api-gateway
 spec:
+  type: NodePort
   ports:
     - port: 8080
       targetPort: 8080
+      NodePort: 30001
   selector:
     app: fleetman-api-gateway
-  type: ClusterIP
