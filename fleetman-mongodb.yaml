@@ -42,6 +42,7 @@ kind: PersistentVolume
 metadata:
   name: mongo-data-pv
 spec:
+  storageClassName: fleetman-storage-class
   capacity:
     storage: 5Gi
   accessModes:
@@ -55,7 +56,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-data-pvc
 spec:
-  storageClassName: ""
+  storageClassName: fleetman-storage-class
   accessModes:
     - ReadWriteOnce
   resources:
