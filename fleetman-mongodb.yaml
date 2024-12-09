@@ -42,6 +42,7 @@ kind: PersistentVolume
 metadata:
   name: mongo-data-pv
 spec:
+  storageClassName: standard
   capacity:
     storage: 5Gi
   accessModes:
@@ -55,7 +56,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-data-pvc
 spec:
-  storageClassName: ""
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
