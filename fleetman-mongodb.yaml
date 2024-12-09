@@ -61,5 +61,4 @@ spec:
     requests:
       storage: 5Gi
   volumeName: mongo-data-pv
-  StorageClassName: ""
   

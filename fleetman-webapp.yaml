@@ -27,7 +27,6 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 30003
   selector:
     app: fleetman-webapp
   type: NodePort
