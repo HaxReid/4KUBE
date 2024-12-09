@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
+      app: fleetman-mongodb
   template:
     metadata:
       labels:
-        app: fleetman
+        app: fleetman-mongodb
     spec:
       containers:
       - name: fleetman-mongodb
@@ -32,7 +32,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: fleetman
+    app: fleetman-mongodb
   ports:
     - port: 27017
       targetPort: 27017
@@ -55,10 +55,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-data-pvc
 spec:
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
   volumeName: mongo-data-pv
----

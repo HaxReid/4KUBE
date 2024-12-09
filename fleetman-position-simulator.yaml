@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
+      app: fleetman-position-simulator
   template:
     metadata:
       labels:
-        app: fleetman
+        app: fleetman-position-simulator
     spec:
       containers:
       - name: fleetman-position-simulator
-        image: supinfo4kube/position-simulator:1.0.0
+        image: supinfo4kube/position-simulator:1.1.0
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "production-microservice"
@@ -28,7 +28,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: fleetman
+    app: fleetman-position-simulator
   ports:
     - port: 8080
       targetPort: 8080

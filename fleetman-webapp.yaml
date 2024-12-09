@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
+      app: fleetman-webapp
   template:
     metadata:
       labels:
-        app: fleetman
+        app: fleetman-webapp
     spec:
       containers:
       - name: fleetman-webapp
-        image: supinfo4kube/web-app:1.0.0
+        image: supinfo4kube/web-app:1.1.0
         ports:
         - containerPort: 80
 ---
@@ -25,7 +25,8 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: fleetman
+    app: fleetman-webapp
   ports:
     - port: 80
       targetPort: 80
+      nodePort: 30080
