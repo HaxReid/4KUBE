@@ -1,42 +1,3 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: fleetman-mongodb
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: fleetman-mongodb
-  template:
-    metadata:
-      labels:
-        app: fleetman-mongodb
-    spec:
-      containers:
-      - name: fleetman-mongodb
-        image: mongo:3.6.23
-        ports:
-        - containerPort: 27017
-        volumeMounts:
-        - name: mongo-data
-          mountPath: /data/db
-      volumes:
-        - name: mongo-data
-          persistentVolumeClaim:
-            claimName: mongo-data-pvc
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: fleetman-mongodb
-spec:
-  type: ClusterIP
-  ports:
-    - port: 27017
-      targetPort: 27017
-  selector:
-    app: fleetman-mongodb
----
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -61,4 +22,42 @@ spec:
     requests:
       storage: 5Gi
   volumeName: mongo-data-pv
-  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fleetman-mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fleetman
+  template:
+    metadata:
+      labels:
+        app: fleetman
+    spec:
+      containers:
+      - name: fleetman-mongodb
+        image: mongo:3.6.23
+        ports:
+          - containerPort: 27017
+        volumeMounts:
+          - name: mongo-data
+            mountPath: /data/db
+      volumes:
+        - name: mongo-data
+          persistentVolumeClaim:
+            claimName: mongo-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-mongodb
+spec:
+  type: ClusterIP
+  selector:
+    app: fleetman
+  ports:
+    - port: 27017
+      targetPort: 27017
