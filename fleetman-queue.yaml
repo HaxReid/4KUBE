@@ -24,7 +24,7 @@ kind: Service
 metadata:
   name: fleetman-queue
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: fleetman-queue
   ports:

@@ -28,7 +28,7 @@ metadata:
   labels:
     app: fleetman-api-gateway
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: fleetman-api-gateway
   ports:
