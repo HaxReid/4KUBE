@@ -33,4 +33,4 @@ spec:
       targetPort: 8161
   selector:
     app: fleetman-queue
-  type: Nodeport
+  type: NodePort
