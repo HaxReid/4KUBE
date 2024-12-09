@@ -25,10 +25,10 @@ metadata:
   name: fleetman-queue
 spec:
   ports:
-    - name: activemq
+    - name: webconsole
       port: 61616
       targetPort: 61616
-    - name: webconsole
+    - name: activemq
       port: 8161
       targetPort: 8161
   selector:
