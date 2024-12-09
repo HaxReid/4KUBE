@@ -32,6 +32,5 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      NodePort: 30001
   selector:
     app: fleetman-api-gateway
