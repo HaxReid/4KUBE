@@ -5,4 +5,4 @@ kubectl apply -f fleetman-queue.yaml
 kubectl apply -f fleetman-position-simulator.yaml
 kubectl apply -f fleetman-position-tracker.yaml
 kubectl apply -f fleetman-api-gateway.yaml
-kubectl apply -f fleetman-webapp.yaml
+kubectl apply -f fleetman-web-app.yaml
