@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: fleetman-api-gateway
-        image: supinfo4kube/api-gateway:1.1.0
+        image: supinfo4kube/api-gateway:1.0.1
         ports:
         - containerPort: 8080
         env:
