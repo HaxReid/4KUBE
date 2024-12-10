@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fleetman-webapp
+  name: fleetman-web-app
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: fleetman
-      component: webapp
+      component: web-app
   template:
     metadata:
       labels:
         app: fleetman
-        component: webapp
+        component: web-app
     spec:
       containers:
-      - name: fleetman-webapp
+      - name: fleetman-web-app
         image: supinfo4kube/web-app:1.1.0
         ports:
         - containerPort: 80
@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: fleetman-webapp
+  name: fleetman-web-app
 spec:
   type: NodePort
   selector:
     app: fleetman
-    component: webapp
+    component: web-app
   ports:
   - port: 80
     targetPort: 80
