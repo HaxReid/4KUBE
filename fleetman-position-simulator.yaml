@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-position-simulator
-  labels:
-    app: fleetman-position-simulator
 spec:
   replicas: 1
   selector:
@@ -19,7 +17,7 @@ spec:
         image: supinfo4kube/position-simulator:1.1.0
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "production-microservice"
+          value: production-microservice
         ports:
         - containerPort: 8080
 ---
@@ -27,9 +25,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: fleetman-position-simulator
-  labels:
-    app: fleetman-position-simulator
 spec:
+  type: ClusterIP
   selector:
     app: fleetman-position-simulator
   ports:

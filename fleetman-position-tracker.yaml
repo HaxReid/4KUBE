@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-position-tracker
-  labels:
-    app: fleetman-position-tracker
 spec:
   replicas: 1
   selector:
@@ -21,17 +19,16 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "production-microservice"
+          value: production-microservice
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: fleetman-position-tracker
-  labels:
-    app: fleetman-position-tracker
 spec:
+  type: ClusterIP
   selector:
     app: fleetman-position-tracker
   ports:
-  - port: 30010
+  - port: 8080
     targetPort: 8080
