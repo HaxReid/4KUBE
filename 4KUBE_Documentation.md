@@ -1,5 +1,4 @@
-# **SUPINFO 4KUBE**  
-# **Benjamin MAURY**  
+# **SUPINFO 4KUBE - Benjamin MAURY**  
 
 ## **Sommaire**  
 1. [Introduction](#1-introduction) 
