@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fleetman-web-app
+  labels:
+    app: fleetman
+    component: web-app
 spec:
   replicas: 1
   selector:
@@ -24,6 +27,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: fleetman-web-app
+  labels:
+    app: fleetman
+    component: web-app
 spec:
   type: NodePort
   selector:
