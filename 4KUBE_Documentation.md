@@ -70,7 +70,7 @@ Commandes à faire sur chaque nœuds du cluster (Master et Workers).
 
 #### **4.1.1 Configurer DNS**  
 
-Chaque machines virtuelles ont deux cartes réseaux (NAT & Host-only).
+Chaque machines virtuelles ont deux cartes réseaux (NAT & Host-only).  
 Voici la configuration des Host-only :
 
 ```bash
