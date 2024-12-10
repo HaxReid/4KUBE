@@ -6,11 +6,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman-position-simulator
+      app: fleetman
+      component: position-simulator
   template:
     metadata:
       labels:
-        app: fleetman-position-simulator
+        app: fleetman
+        component: position-simulator
     spec:
       containers:
       - name: fleetman-position-simulator
@@ -28,7 +30,8 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: fleetman-position-simulator
+    app: fleetman
+    component: position-simulator
   ports:
-    - port: 8080
-      targetPort: 8080
+  - port: 8080
+    targetPort: 8080

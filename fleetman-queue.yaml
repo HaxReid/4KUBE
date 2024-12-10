@@ -6,11 +6,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman-queue
+      app: fleetman
+      component: queue
   template:
     metadata:
       labels:
-        app: fleetman-queue
+        app: fleetman
+        component: queue
     spec:
       containers:
       - name: fleetman-queue
@@ -26,11 +28,12 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: fleetman-queue
+    app: fleetman
+    component: queue
   ports:
-    - name: messaging
-      port: 61616
-      targetPort: 61616
-    - name: admin
-      port: 8161
-      targetPort: 8161
+  - name: messaging
+    port: 61616
+    targetPort: 61616
+  - name: admin
+    port: 8161
+    targetPort: 8161

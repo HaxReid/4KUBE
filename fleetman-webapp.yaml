@@ -6,11 +6,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman-webapp
+      app: fleetman
+      component: webapp
   template:
     metadata:
       labels:
-        app: fleetman-webapp
+        app: fleetman
+        component: webapp
     spec:
       containers:
       - name: fleetman-webapp
@@ -25,8 +27,9 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: fleetman-webapp
+    app: fleetman
+    component: webapp
   ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30080
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
