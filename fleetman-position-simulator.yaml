@@ -3,19 +3,16 @@ kind: Deployment
 metadata:
   name: fleetman-position-simulator
   labels:
-    app: fleetman
-    component: position-simulator
+    app: fleetman-position-simulator
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
-      component: position-simulator
+      app: fleetman-position-simulator
   template:
     metadata:
       labels:
-        app: fleetman
-        component: position-simulator
+        app: fleetman-position-simulator
     spec:
       containers:
       - name: fleetman-position-simulator
@@ -31,13 +28,10 @@ kind: Service
 metadata:
   name: fleetman-position-simulator
   labels:
-    app: fleetman
-    component: position-simulator
+    app: fleetman-position-simulator
 spec:
-  type: ClusterIP
   selector:
-    app: fleetman
-    component: position-simulator
+    app: fleetman-position-simulator
   ports:
   - port: 8080
     targetPort: 8080

@@ -3,19 +3,16 @@ kind: Deployment
 metadata:
   name: fleetman-api-gateway
   labels:
-    app: fleetman
-    component: api-gateway
+    app: fleetman-api-gateway
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
-      component: api-gateway
+      app: fleetman-api-gateway
   template:
     metadata:
       labels:
-        app: fleetman
-        component: api-gateway
+        app: fleetman-api-gateway
     spec:
       containers:
       - name: fleetman-api-gateway
@@ -31,14 +28,10 @@ kind: Service
 metadata:
   name: fleetman-api-gateway
   labels:
-    app: fleetman
-    component: api-gateway
+    app: fleetman-api-gateway
 spec:
-  type: NodePort
   selector:
-    app: fleetman
-    component: api-gateway
+    app: fleetman-api-gateway
   ports:
-  - port: 8080
+  - port: 30020
     targetPort: 8080
-    nodePort: 30020

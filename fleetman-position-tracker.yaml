@@ -3,19 +3,16 @@ kind: Deployment
 metadata:
   name: fleetman-position-tracker
   labels:
-    app: fleetman
-    component: position-tracker
+    app: fleetman-position-tracker
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fleetman
-      component: position-tracker
+      app: fleetman-position-tracker
   template:
     metadata:
       labels:
-        app: fleetman
-        component: position-tracker
+        app: fleetman-position-tracker
     spec:
       containers:
       - name: fleetman-position-tracker
@@ -31,14 +28,10 @@ kind: Service
 metadata:
   name: fleetman-position-tracker
   labels:
-    app: fleetman
-    component: position-tracker
+    app: fleetman-position-tracker
 spec:
-  type: NodePort
   selector:
-    app: fleetman
-    component: position-tracker
+    app: fleetman-position-tracker
   ports:
-  - port: 8080
+  - port: 30010
     targetPort: 8080
-    nodePort: 30010
