@@ -18,7 +18,7 @@ spec:
         component: mongodb
     spec:
       containers:
-      - name: fleetman-mongodb
+      - name: mongodb
         image: mongo:3.6.23
         ports:
         - containerPort: 27017

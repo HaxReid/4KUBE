@@ -18,7 +18,7 @@ spec:
         component: web-app
     spec:
       containers:
-      - name: fleetman-web-app
+      - name: web-app
         image: supinfo4kube/web-app:1.1.0
         ports:
         - containerPort: 80

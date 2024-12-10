@@ -18,7 +18,7 @@ spec:
         component: position-simulator
     spec:
       containers:
-      - name: fleetman-position-simulator
+      - name: position-simulator
         image: supinfo4kube/position-simulator:1.1.0
         env:
         - name: SPRING_PROFILES_ACTIVE
