@@ -175,7 +175,8 @@ Maintenant, tout est prêts pour créer un cluster Kubernetes :
 $ sudo kubeadm init --control-plane-endpoint=k8s-master
 ```
 
-La sortie de cette commande confirme que le cluster a été initialisé avec succès. Dans la sortie, nous avons des commandes utilisateur pour interagir avec le cluster et également la commande pour joindre n'importe quel nœud de travail à ce cluster.
+La sortie de cette commande confirme que le cluster a été initialisé avec succès.  
+Dans la sortie, nous avons des commandes utilisateur pour interagir avec le cluster et également la commande pour joindre n'importe quel nœud de travail à ce cluster.
 
 Pour commencer à interagir avec le cluster, il faut suivre ces commandes :
 
@@ -200,7 +201,7 @@ $ sudo kubeadm join k8s-master:6443 --token <votre-token> --discovery-token-ca-c
 
 ### **4.4 Installer le moteur de politique réseau Calico**
 
-A la fin de l'étape précédente, le statut des noeuds est NotReady.
+A la fin de l'étape précédente, le statut des noeuds est NotReady.  
 Afin de corriger cela, il faut installer un moteur de politique réseau, dans notre cas, nous allons installer Calico.
 
 Sur le nœud maître, lancez la commande :
@@ -213,7 +214,7 @@ $ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.
 
 ## **5. Vérification des Déploiements**
 
-Suite à la création et la configuration du cluster Kubernetes.
+Suite à la création et la configuration du cluster Kubernetes.  
 Nous pouvons lancer nos manifests à l'intérieur de celui-ci.
 
 Avec les commandes :
@@ -223,7 +224,7 @@ $ kubectl get pods
 $ kubectl get services
 ```
 
-Nous nous assurons que tout fonctionne correctement et est en "Running"
+Nous nous assurons que tout fonctionne correctement et est en "Running".  
 Sinon il faut utiliser la commande :
 
 ```bash
@@ -235,21 +236,21 @@ Pour voir ce qu'il se passe dans le pod.
 
 ## **6. Accès à l'application**
 
-Si l'application tourne en local sous Windows ou autres avec Docker.
+Si l'application tourne en local sous Windows ou autres avec Docker.  
 Il faut utiliser ce lien :
 
 ```plaintext
 http://localhost:30080
 ```
 
-Si l'application tourne sous le cluster Kubernetes.
+Si l'application tourne sous le cluster Kubernetes.  
 Il faut utiliser ce lien :
 
 ```plaintext
 http://<master-ip>:30080
 ```
 
-L'ip correspondante est l'ip de la carte NAT.
+L'ip correspondante est l'ip de la carte NAT.  
 Vérifiez la configuration IP de votre Master avec la commande :
 
 ```bash
@@ -266,13 +267,10 @@ Cette documentation fournit les étapes nécessaires pour configurer un cluster 
 
 ## **8. Sources**
 
-Lien vers le tutoriel utilisé pour la création du cluster Kubernetes :
-https://gitlab.agglo-lepuyenvelay.fr/-/snippets/1036
+Lien vers le tutoriel utilisé pour la création du cluster Kubernetes : https://gitlab.agglo-lepuyenvelay.fr/-/snippets/1036  
 (Seules les étapes présentes dans cette documentation ont été faites)
 
-Le tuto ci-dessus n'est pas à jour sur la commande pour installer le package kubernetes.
-Il était anciennement hébergé par Google et maintenant il est hébergé par la communauté Kubernetes avec une nouvelle commande présent dans ce lien :
-https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/
+Le tuto ci-dessus n'est pas à jour sur la commande pour installer le package kubernetes.  
+Il était anciennement hébergé par Google et maintenant il est hébergé par la communauté Kubernetes avec une nouvelle commande présent dans ce lien : https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/
 
-Lien vers mon repo GitHub :
-https://github.com/HaxReid/4KUBE.git
+Lien vers mon repo GitHub : https://github.com/HaxReid/4KUBE.git
