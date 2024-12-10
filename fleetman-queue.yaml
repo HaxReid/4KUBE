@@ -18,7 +18,7 @@ spec:
         component: queue
     spec:
       containers:
-      - name: queue
+      - name: fleetman-queue
         image: supinfo4kube/queue:1.1.0
         ports:
         - containerPort: 61616

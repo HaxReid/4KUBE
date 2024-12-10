@@ -18,7 +18,7 @@ spec:
         component: api-gateway
     spec:
       containers:
-      - name: api-gateway
+      - name: fleetman-api-gateway
         image: supinfo4kube/api-gateway:1.1.0
         ports:
         - containerPort: 8080
