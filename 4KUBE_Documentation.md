@@ -271,5 +271,3 @@ Lien vers le tutoriel utilisé pour la création du cluster Kubernetes : https:/
 
 Le tuto ci-dessus n'est pas à jour sur la commande pour installer le package kubernetes.  
 Il était anciennement hébergé par Google et maintenant il est hébergé par la communauté Kubernetes avec une nouvelle commande présent dans ce lien : https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/
-
-Lien vers mon repo GitHub : https://github.com/HaxReid/4KUBE.git
