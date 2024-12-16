@@ -70,7 +70,7 @@ Commandes à faire sur chaque nœuds du cluster (Master et Workers).
 
 #### **4.1.1 Configurer DNS**  
 
-Chaque machines virtuelles ont deux cartes réseaux (NAT & Host-only).
+Chaque machines virtuelles ont deux cartes réseaux (NAT & Host-only).  
 Voici la configuration des Host-only :
 
 ```bash
@@ -270,4 +270,8 @@ Lien vers le tutoriel utilisé pour la création du cluster Kubernetes : https:/
 (Seules les étapes présentes dans cette documentation ont été faites)
 
 Le tuto ci-dessus n'est pas à jour sur la commande pour installer le package kubernetes.  
+<<<<<<< HEAD
 Il était anciennement hébergé par Google et maintenant il est hébergé par la communauté Kubernetes avec une nouvelle commande présent dans ce lien : https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/
+=======
+Il était anciennement hébergé par Google et maintenant il est hébergé par la communauté Kubernetes avec une nouvelle commande présent dans ce lien : https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/
+>>>>>>> b0e400188604961b254ca38815eb7030775ce2eb
