@@ -26,9 +26,10 @@ kind: Service
 metadata:
   name: fleetman-position-tracker
 spec:
-  type: ClusterIP
+  type: Nodeport
   selector:
     app: fleetman-position-tracker
   ports:
   - port: 8080
     targetPort: 8080
+    nodeport: 30010
