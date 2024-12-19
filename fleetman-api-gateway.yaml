@@ -26,10 +26,10 @@ kind: Service
 metadata:
   name: fleetman-api-gateway
 spec:
-  type: Nodeport
+  type: NodePort
   selector:
     app: fleetman-api-gateway
   ports:
   - port: 8080
     targetPort: 8080
-    nodeport: 30020
+    nodePort: 30020
